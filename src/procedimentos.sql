@@ -1,14 +1,13 @@
+
 CREATE PROCEDURE CrearPlanEntrenamiento
-    @id_instructor INT,
+    @id_usuario_instructor INT,
     @precio DECIMAL(10, 2),
-    @descripcion VARCHAR(255),
-    @inactivo_plan_entrenamiento BIT
+    @descripcion TEXT
 AS
 BEGIN
-    INSERT INTO PlanEntrenamiento (id_instructor, precio, descripcion, inactivo_plan_entrenamiento)
-    VALUES (@id_instructor, @precio, @descripcion, @inactivo_plan_entrenamiento);
+    INSERT INTO PlanEntrenamiento (id_usuario, precio, descripcion)
+    VALUES (@id_usuario_instructor, @precio, @descripcion);
 END;
-
 
 
 
@@ -20,23 +19,11 @@ CREATE PROCEDURE CrearInstructor
     @avatar_url VARCHAR(100),
     @contrasena VARCHAR(100),
     @numero_telefono VARCHAR(100),
-    @sexo CHAR(1),
-    @usuario_inactivo BIT,
-    @instructor_inactivo BIT
+    @sexo CHAR(1)
 AS
 BEGIN
-    DECLARE @id_usuario INT;
-
-    -- Crear el usuario con id_rol = 2
-    INSERT INTO Usuario (id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo)
-    VALUES (2, @apodo, @nombre, @apellido, @avatar_url, @contrasena, GETDATE(), @numero_telefono, @sexo, @usuario_inactivo);
-
-    -- Obtener el id_usuario del usuario recién creado
-    SELECT @id_usuario = SCOPE_IDENTITY();
-
-    -- Crear el instructor
-    INSERT INTO Instructor (id_usuario, instructor_inactivo)
-    VALUES (@id_usuario, @instructor_inactivo);
+    INSERT INTO Usuario (id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo)
+    VALUES (2, @apodo, @nombre, @apellido, @avatar_url, @contrasena, GETDATE(), @numero_telefono, @sexo);
 END;
 
 
@@ -63,11 +50,24 @@ CREATE PROCEDURE CrearCliente
     @avatar_url VARCHAR(100),
     @contrasena VARCHAR(100),
     @numero_telefono VARCHAR(100),
-    @sexo CHAR(1),
-    @usuario_inactivo BIT
+    @sexo CHAR(1)
 AS
 BEGIN
     -- Crear el usuario con id_rol = 3
-    INSERT INTO Usuario (id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo)
-    VALUES (3, @apodo, @nombre, @apellido, @avatar_url, @contrasena, GETDATE(), @numero_telefono, @sexo, @usuario_inactivo);
+    INSERT INTO Usuario (id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo)
+    VALUES (3, @apodo, @nombre, @apellido, @avatar_url, @contrasena, GETDATE(), @numero_telefono, @sexo);
+END;
+
+
+
+CREATE PROCEDURE CambiarEstadoUsuario
+    @id_usuario INT
+AS
+BEGIN
+    UPDATE Usuario
+    SET usuario_inactivo = CASE 
+                             WHEN usuario_inactivo = 1 THEN 0
+                             ELSE 1
+                           END
+    WHERE id_usuario = @id_usuario;
 END;

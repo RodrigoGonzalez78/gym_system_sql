@@ -82,8 +82,8 @@ CREATE TABLE EstadoFisico (
     altura DECIMAL(5, 2) NOT NULL,
     fecha_creacion DATETIME DEFAULT GETDATE() NOT NULL,
     notas TEXT,
-    inactivo_estado_fisico BIT DEFAULT 0 NOT NULL,
-    id_alumno_suscripcion INT NOT NULL, -- Referencia a la tabla AlumnoSuscripcion
+    estado_fisico_inactivo BIT DEFAULT 0 NOT NULL,
+    id_alumno_suscripcion INT NOT NULL,
     imagen_url VARCHAR(100),
 
     CONSTRAINT FK_EstadoFisico_AlumnoSuscripcion FOREIGN KEY (id_alumno_suscripcion) REFERENCES AlumnoSuscripcion(id_alumno_suscripcion)
