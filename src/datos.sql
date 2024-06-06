@@ -17,12 +17,12 @@ VALUES ('Cliente');
 
 -- Insertar un usuario Administrador
 INSERT INTO Usuario (id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo)
-VALUES (1, 'admin_apodo', 'AdminNombre', 'AdminApellido', 'http://example.com/avatar_admin.png', 'admin_contrasena', GETDATE(), '1234567890', 'M', 0);
+VALUES (1, 'admin', 'AdminNombre', 'AdminApellido', 'http://example.com/avatar_admin.png', 'admin_contrasena', GETDATE(), '1234567890', 'M', 0);
 
 -- Insertar un usuario Instructor
 INSERT INTO Usuario (id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo)
-VALUES (2, 'instr_apodo', 'InstrNombre', 'InstrApellido', 'http://example.com/avatar_instr.png', 'instr_contrasena', GETDATE(), '0987654321', 'F', 0);
+VALUES (2, 'instr', 'InstrNombre', 'InstrApellido', 'http://example.com/avatar_instr.png', 'instr_contrasena', GETDATE(), '0987654321', 'F', 0);
 
 -- Insertar un usuario Cliente
 INSERT INTO Usuario (id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo)
-VALUES (3, 'cliente_apodo', 'ClienteNombre', 'ClienteApellido', 'http://example.com/avatar_cliente.png', 'cliente_contrasena', GETDATE(), '1122334455', 'M', 0);
+VALUES (3, 'cliente', 'ClienteNombre', 'ClienteApellido', 'http://example.com/avatar_cliente.png', 'cliente_contrasena', GETDATE(), '1122334455', 'M', 0);
