@@ -56,7 +56,7 @@ CREATE TABLE PlanEntrenamiento_Audit (
     id_plan_entrenamiento INT,
     id_usuario INT,
     precio DECIMAL(10, 2),
-    descripcion TEXT,
+    descripcion VARCHAR(MAX),
     plan_entrenamiento_inactivo BIT,
     operation_type CHAR(1), -- I=Insert, U=Update, D=Delete
     operation_date DATETIME DEFAULT GETDATE(),
@@ -82,7 +82,7 @@ CREATE TABLE EstadoFisico_Audit (
     peso DECIMAL(5, 2),
     altura DECIMAL(5, 2),
     fecha_creacion DATETIME,
-    notas TEXT,
+    notas VARCHAR(MAX),
     estado_fisico_inactivo BIT,
     id_alumno_suscripcion INT,
     imagen_url VARCHAR(100),
