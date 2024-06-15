@@ -60,7 +60,7 @@ CREATE TABLE PlanEntrenamiento (
     id_plan_entrenamiento INT  IDENTITY(1,1),
     id_usuario INT NOT NULL, -- El usuario tipo instructor encargado del plan de entrenamiento
     precio DECIMAL(10, 2) NOT NULL,
-    descripcion TEXT,
+    descripcion VARCHAR(MAX) NOT NULL,
     plan_entrenamiento_inactivo BIT DEFAULT 0 NOT NULL,
 
     CONSTRAINT PLANENTRENAMIENTO_PK_ID_PLAN_ENTRENAMIENTO PRIMARY KEY (id_plan_entrenamiento),
@@ -86,10 +86,10 @@ CREATE TABLE EstadoFisico (
     peso DECIMAL(5, 2) NOT NULL,
     altura DECIMAL(5, 2) NOT NULL,
     fecha_creacion DATETIME DEFAULT GETDATE() NOT NULL,
-    notas TEXT,
+    notas VARCHAR(MAX) NOt NULL,
     estado_fisico_inactivo BIT DEFAULT 0 NOT NULL,
     id_alumno_suscripcion INT NOT NULL,
-    imagen_url VARCHAR(100),
+    imagen_url VARCHAR(100) NOT  NULL,
 
     CONSTRAINT ESTADOFISICO_PK_ID_ESTADO_FISICO PRIMARY KEY (id_estado_fisico),
     CONSTRAINT ESTADOFISICO_FK_EstadoFisico_AlumnoSuscripcion FOREIGN KEY (id_alumno_suscripcion) REFERENCES AlumnoSuscripcion(id_alumno_suscripcion)
