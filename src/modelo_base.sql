@@ -14,7 +14,7 @@ CREATE TABLE Rol (
 CREATE TABLE Usuario (
     id_usuario INT  IDENTITY(1,1),
     id_rol INT,
-    apodo VARCHAR(20) NOT NULL,
+    apodo VARCHAR(20) NOT NULL UNIQUE,
     nombre VARCHAR(20) NOT NULL,
     apellido VARCHAR(20) NOT NULL,
     avatar_url VARCHAR(100) NOT NULL,
