@@ -20,6 +20,7 @@ CREATE TABLE Usuario (
     avatar_url VARCHAR(100) NOT NULL,
     contrasena VARCHAR(100) NOT NULL,
     fecha_creacion DATETIME DEFAULT GETDATE() NOT NULL,
+    fecha_nacimiento DATETIME NOT NULL,
     numero_telefono VARCHAR(100) NOT NULL,
     sexo CHAR(1)  NOT NULL,
     usuario_inactivo BIT DEFAULT 0 NOT NULL,
@@ -58,24 +59,24 @@ CREATE TABLE Pago (
 -- Creación de la tabla PlanEntrenamiento
 CREATE TABLE PlanEntrenamiento (
     id_plan_entrenamiento INT  IDENTITY(1,1),
-    id_usuario INT NOT NULL, -- El usuario tipo instructor encargado del plan de entrenamiento
+    id_entrenador INT NOT NULL, -- El usuario tipo instructor encargado del plan de entrenamiento
     precio DECIMAL(10, 2) NOT NULL,
     descripcion VARCHAR(MAX) NOT NULL,
     plan_entrenamiento_inactivo BIT DEFAULT 0 NOT NULL,
 
     CONSTRAINT PLANENTRENAMIENTO_PK_ID_PLAN_ENTRENAMIENTO PRIMARY KEY (id_plan_entrenamiento),
-    CONSTRAINT FK_PLANENTRENAMIENTO_INSTRUCTOR FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+    CONSTRAINT FK_PLANENTRENAMIENTO_INSTRUCTOR FOREIGN KEY (id_entrenador) REFERENCES Usuario(id_usuario)
 );
 
 -- Creación de la tabla AlumnoSuscripcion
 CREATE TABLE AlumnoSuscripcion (
     id_alumno_suscripcion INT IDENTITY(1,1),
-    id_usuario INT NOT NULL, 
+    id_alumno INT NOT NULL, 
     id_plan_entrenamiento INT NOT NULL, 
     fecha_expiracion DATE NOT NULL,
 
     CONSTRAINT ALUMNOSUSCRIPCION_PK_ID_ALUMNO_SUSCRIPCION PRIMARY KEY (id_alumno_suscripcion),
-    CONSTRAINT ALUMNOSUSCRIPCION_FK_AlumnoSuscripcion_Usuario FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+    CONSTRAINT ALUMNOSUSCRIPCION_FK_AlumnoSuscripcion_Usuario FOREIGN KEY (id_alumno) REFERENCES Usuario(id_usuario),
     CONSTRAINT ALUMNOSUSCRIPCION_FK_AlumnoSuscripcion_PlanEntrenamiento FOREIGN KEY (id_plan_entrenamiento) REFERENCES PlanEntrenamiento(id_plan_entrenamiento)
 );
 

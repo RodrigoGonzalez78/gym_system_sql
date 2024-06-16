@@ -1,9 +1,9 @@
 CREATE PROCEDURE CrearPlanEntrenamiento
-    @id_usuario_instructor INT,
+    @id_entrenador INT,
     @precio DECIMAL(10, 2),
     @descripcion TEXT
 AS
 BEGIN
-    INSERT INTO PlanEntrenamiento (id_usuario, precio, descripcion)
-    VALUES (@id_usuario_instructor, @precio, @descripcion);
+    INSERT INTO PlanEntrenamiento (id_entrenador, precio, descripcion)
+    VALUES (@id_entrenador, @precio, @descripcion);
 END;

@@ -5,22 +5,22 @@ AS
 BEGIN
     IF EXISTS (SELECT * FROM inserted)
     BEGIN
-        INSERT INTO Usuario_Audit (id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo, operation_type)
-        SELECT id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo, 'I'
+        INSERT INTO Usuario_Audit (id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion,fecha_nacimiento, numero_telefono, sexo, usuario_inactivo, operation_type)
+        SELECT id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, fecha_nacimiento, numero_telefono, sexo, usuario_inactivo, 'I'
         FROM inserted;
     END
 
     IF EXISTS (SELECT * FROM deleted)
     BEGIN
-        INSERT INTO Usuario_Audit (id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo, operation_type)
-        SELECT id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo, 'D'
+        INSERT INTO Usuario_Audit (id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion,fecha_nacimiento, numero_telefono, sexo, usuario_inactivo, operation_type)
+        SELECT id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion,fecha_nacimiento, numero_telefono, sexo, usuario_inactivo, 'D'
         FROM deleted;
     END
 
     IF EXISTS (SELECT * FROM inserted) AND EXISTS (SELECT * FROM deleted)
     BEGIN
-        INSERT INTO Usuario_Audit (id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo, operation_type)
-        SELECT id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion, numero_telefono, sexo, usuario_inactivo, 'U'
+        INSERT INTO Usuario_Audit (id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion,fecha_nacimiento, numero_telefono, sexo, usuario_inactivo, operation_type)
+        SELECT id_usuario, id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_creacion,fecha_nacimiento, numero_telefono, sexo, usuario_inactivo, 'U'
         FROM inserted;
     END
 END;

@@ -157,20 +157,35 @@
 											"top": 454,
 											"width": 130.525390625,
 											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAGQHiOySadoejM=",
+											"_parent": {
+												"$ref": "AAAAAAGPAZpDjtKIkVI="
+											},
+											"model": {
+												"$ref": "AAAAAAGQHiOyO6dlcU8="
+											},
+											"font": "Arial;13;0",
+											"left": 333,
+											"top": 469,
+											"width": 130.525390625,
+											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 328,
 									"top": 359,
 									"width": 140.525390625,
-									"height": 113
+									"height": 128
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 328,
 							"top": 336,
 							"width": 140.525390625,
-							"height": 136,
+							"height": 151,
 							"nameLabel": {
 								"$ref": "AAAAAAGPAZpDjtKHTaM="
 							},
@@ -295,7 +310,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 380,
-									"top": 489,
+									"top": 496,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -329,7 +344,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 380,
-									"top": 491,
+									"top": 506,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -346,7 +361,7 @@
 								"$ref": "AAAAAAGPAZtgf9LE1UQ="
 							},
 							"lineStyle": 2,
-							"points": "395:520;395:472",
+							"points": "395:520;395:487",
 							"nameLabel": {
 								"$ref": "AAAAAAGPAZ25ZNLs77E="
 							},
@@ -1599,18 +1614,6 @@
 							"headNameLabel": {
 								"$ref": "AAAAAAGPxjHF5oNu/xA="
 							}
-						},
-						{
-							"_type": "UMLTextView",
-							"_id": "AAAAAAGPxjnRoIOertk=",
-							"_parent": {
-								"$ref": "AAAAAAFLzntJC6ElOqo="
-							},
-							"font": "Arial;13;0",
-							"top": 296,
-							"width": 100,
-							"height": 51,
-							"text": "Modificar los diccionarios de datos"
 						}
 					]
 				},
@@ -1649,8 +1652,7 @@
 								"$ref": "AAAAAAGPAZpDjNKE2Y0="
 							},
 							"name": "cbu_destino",
-							"length": 0,
-							"foreignKey": true
+							"length": 0
 						},
 						{
 							"_type": "ERDColumn",
@@ -1659,8 +1661,7 @@
 								"$ref": "AAAAAAGPAZpDjNKE2Y0="
 							},
 							"name": "cbu_origen",
-							"length": 0,
-							"foreignKey": true
+							"length": 0
 						},
 						{
 							"_type": "ERDColumn",
@@ -1688,6 +1689,16 @@
 							},
 							"name": "pago_inactivo",
 							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGQHiOyO6dlcU8=",
+							"_parent": {
+								"$ref": "AAAAAAGPAZpDjNKE2Y0="
+							},
+							"name": "id_tipo_pago",
+							"length": 0,
+							"foreignKey": true
 						}
 					]
 				},
@@ -1754,7 +1765,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGPAZtgf9LCohI="
 							},
-							"name": "inactivo_tipo_pago",
+							"name": "tipo_pago_inactivo",
 							"length": 0
 						}
 					]
@@ -2279,7 +2290,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGPAaCl8NOKd1E="
 							},
-							"name": "id_usuario",
+							"name": "id_alumno",
 							"length": 0,
 							"foreignKey": true
 						},
@@ -2446,7 +2457,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGPAaF+etPcWUY="
 							},
-							"name": "id_intructor",
+							"name": "id_entrenador",
 							"length": 0,
 							"foreignKey": true
 						},
@@ -2992,13 +3003,28 @@
 											"top": 411,
 											"width": 130.525390625,
 											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAGQHzOYXQpbALM=",
+											"_parent": {
+												"$ref": "AAAAAAGPAkNO5NcRfZ0="
+											},
+											"model": {
+												"$ref": "AAAAAAGQHiOyO6dlcU8="
+											},
+											"font": "Arial;13;0",
+											"left": 66,
+											"top": 426,
+											"width": 130.525390625,
+											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 61,
 									"top": 316,
 									"width": 140.525390625,
-									"height": 113
+									"height": 128
 								}
 							],
 							"font": "Arial;13;0",

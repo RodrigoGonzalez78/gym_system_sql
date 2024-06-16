@@ -24,6 +24,7 @@ BEGIN
                apellido,
                avatar_url,
                fecha_creacion,
+               fecha_nacimiento,
                numero_telefono,
                sexo,
                usuario_inactivo

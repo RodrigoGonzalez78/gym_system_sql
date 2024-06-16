@@ -19,6 +19,7 @@ CREATE TABLE Usuario_Audit (
     avatar_url VARCHAR(100),
     contrasena VARCHAR(100),
     fecha_creacion DATETIME,
+    fecha_nacimiento DATETIME,
     numero_telefono VARCHAR(100),
     sexo CHAR(1),
     usuario_inactivo BIT,
@@ -54,7 +55,7 @@ CREATE TABLE Pago_Audit (
 CREATE TABLE PlanEntrenamiento_Audit (
     audit_id INT IDENTITY(1,1),
     id_plan_entrenamiento INT,
-    id_usuario INT,
+    id_entrenador INT,
     precio DECIMAL(10, 2),
     descripcion VARCHAR(MAX),
     plan_entrenamiento_inactivo BIT,
@@ -66,7 +67,7 @@ CREATE TABLE PlanEntrenamiento_Audit (
 CREATE TABLE AlumnoSuscripcion_Audit (
     audit_id INT IDENTITY(1,1),
     id_alumno_suscripcion INT,
-    id_usuario INT,
+    id_alumno INT,
     id_plan_entrenamiento INT,
     fecha_expiracion DATE,
     operation_type CHAR(1), -- I=Insert, U=Update, D=Delete
