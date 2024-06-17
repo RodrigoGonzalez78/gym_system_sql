@@ -26,7 +26,7 @@ values(1,'admin','adminNombre','adminApellido','','$2a$11$netRERtai.UGKsvpsuVmP.
 
 -- Insertar un recepcionista
 INSERT INTO Usuario(id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_nacimiento,numero_telefono, sexo, usuario_inactivo)
-VALUES (2, 'recepcionista1', 'Juan', 'Perez', '', '$2a$11$netRERtai.UGKsvpsuVmP.oK6LpZlIH9o49yuS0hJjtvGrEh11652', DATEADD(year, -27, GETDATE()), 1234567890, 'M', 0);
+VALUES (4, 'recepcionista1', 'Juan', 'Perez', '', '$2a$11$netRERtai.UGKsvpsuVmP.oK6LpZlIH9o49yuS0hJjtvGrEh11652', DATEADD(year, -27, GETDATE()), 1234567890, 'M', 0);
 
 -- Insertar tres instructores
 INSERT INTO Usuario(id_rol, apodo, nombre, apellido, avatar_url, contrasena, fecha_nacimiento, numero_telefono, sexo, usuario_inactivo)
